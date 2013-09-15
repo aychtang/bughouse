@@ -1,0 +1,7 @@
+[submodule "packages/chessjs"]
+	path = packages/chessjs
+	url = https://github.com/jhlywa/chess.js.git
+
+[submodule "packages/iron-router"]
+	path = packages/iron-router
+	url = https://github.com/EventedMind/iron-router.git
