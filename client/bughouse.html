@@ -1,16 +1,25 @@
-<head>
-  <title>bughouse</title>
-</head>
+<template name="home">
+  <head>
+    <title>bughouse</title>
+  </head>
 
-<body>
-  {{> hello}}
-  {{> board}}
-</body>
+  <body>
+    {{> hello}}
+  </body>
+</template>
 
 <template name="hello">
   <h1>Bughouse!</h1>
 </template>
 
-<template name="board">
+<template name="listOfBoards">
+  <ul>
+    {{#each boards}}
+      <a href='/boards/:{{_id}}'>View Board! <span>{{_id}}</span></a>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="showBoard">
 	<div id="board1" style="width: 400px"></div>
 </template>

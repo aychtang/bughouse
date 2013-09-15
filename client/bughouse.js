@@ -1,4 +1,11 @@
 Meteor.startup(function() {
+	Template.listOfBoards.boards = Boards.find().fetch();
+	Template.listOfBoards.events({
+		"click button": function () {
+			Router.path('boardShow', board);
+		}
+	});
+
 	var onChange = function() {
 		var data = {
 			positions: board1.position()
@@ -18,9 +25,29 @@ Meteor.startup(function() {
 		}
 	};
 
-	var board1 = new ChessBoard('board1', {
-		draggable: true,
-		position: 'start',
-		onChange: onChange
+
+	Router.map(function(){
+		this.route('home', {path: '/'});
+
+	  this.route('showBoard',{
+	    path: '/boards/:_id',
+	    controller: 'BoardsController',
+	    action: 'show'
+	  });
 	});
+
+	BoardsController = RouteController.extend({
+		template: 'showBoard',
+
+		data: function() {
+			return Boards.findOne(this.params._id);
+		},
+		show: function() {
+			var board1 = new ChessBoard('board1', {
+				draggable: true,
+				position: 'start',
+				onChange: onChange
+			});
+		}
+	})
 });
