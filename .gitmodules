@@ -1,6 +1,10 @@
 [submodule "packages/chessjs"]
-	path = packages/chessjs
-	url = https://github.com/jhlywa/chess.js.git
+  path = packages/chessjs
+  url = https://github.com/jhlywa/chess.js.git
+
+[submodule "packages/chessboardjs"]
+	path = packages/chessboardjs
+	url = https://github.com/oakmac/chessboardjs.git
 
 [submodule "packages/iron-router"]
 	path = packages/iron-router
