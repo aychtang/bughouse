@@ -3,6 +3,11 @@ Meteor.startup ->
   Template.listOfBoards.events
     "click button": ->
       Router.path "boardShow", board
+  Template.showBoard.rendered = ->
+    board1 = new ChessBoard "board1",
+      draggable: true
+      position: "start"
+      onChange: onChange
 
   onChange = ->
     data = positions: board1.position()
@@ -27,14 +32,11 @@ Meteor.startup ->
       action: "show"
 
 
-  BoardsController = RouteController.extend
+  window.BoardsController = RouteController.extend
 
     template: "showBoard"
     data: ->
       Boards.findOne @params._id
 
     show: ->
-      board1 = new ChessBoard "board1",
-        draggable: true
-        position: "start"
-        onChange: onChange
+      @render()
