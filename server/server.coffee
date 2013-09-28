@@ -24,3 +24,6 @@ Meteor.startup ->
     while i < fakeBoards.length
       Boards.insert fakeBoards[i]
       i++
+
+  Meteor.publish "Boards", ->
+    Boards.find({});
