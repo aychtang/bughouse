@@ -12,4 +12,6 @@ chessboardjs
 chessjs
 iron-router
 coffeescript
-rooms
+accounts-ui
+accounts-base
+accounts-password

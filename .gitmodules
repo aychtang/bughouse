@@ -9,7 +9,6 @@
 [submodule "packages/iron-router"]
   path = packages/iron-router
   url = https://github.com/EventedMind/iron-router.git
-
 [submodule "packages/rooms"]
 	path = packages/rooms
 	url = https://github.com/Whoaa512/rooms.git

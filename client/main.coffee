@@ -1,5 +1,5 @@
 Meteor.startup ->
-  Template.listOfBoards.boards = Boards.find().fetch()
+  Template.listOfBoards.boards = Boards.find()
   Template.listOfBoards.events
     "click button": ->
       Router.path "boardShow", board

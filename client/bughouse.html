@@ -8,9 +8,7 @@
     {{> hello}}
 
     {{#if currentUser}}
-      {{ createRoomControls }}
-      {{ roomsList }}
-      {{> room }}
+      {{> listOfBoards}}
     {{/if}}
   </body>
 </template>
@@ -22,17 +20,11 @@
 <template name="listOfBoards">
   <ul>
     {{#each boards}}
-      <a href='/boards/:{{_id}}'>View Board! <span>{{_id}}</span></a>
+      <li><a href='/boards/:{{_id}}'>View Board! <span>{{_id}}</span></a></li>
     {{/each}}
   </ul>
 </template>
 
 <template name="showBoard">
 	<div id="board1" style="width: 400px"></div>
-</template>
-
-<template name="room">
-  {{#if inRoom}}
-    {{> singleRoom }}
-  {{/if}}
 </template>
