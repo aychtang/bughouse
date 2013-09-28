@@ -7,5 +7,9 @@
 	url = https://github.com/oakmac/chessboardjs.git
 
 [submodule "packages/iron-router"]
-	path = packages/iron-router
-	url = https://github.com/EventedMind/iron-router.git
+  path = packages/iron-router
+  url = https://github.com/EventedMind/iron-router.git
+
+[submodule "packages/rooms"]
+	path = packages/rooms
+	url = https://github.com/Whoaa512/rooms.git
