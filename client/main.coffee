@@ -10,7 +10,7 @@ Meteor.startup ->
       onChange: onChange
 
   onChange = ->
-    data = positions: board1.position()
+    data = positions: this.position()
     if not Session.get "board" or
       Boards.find(_id: Session.get "board").fetch().length is 0
       then Session.set "board", Boards.insert data
@@ -19,7 +19,7 @@ Meteor.startup ->
         _id: Session.get "board"
       ,
         $set:
-          positions: board1.position()
+          positions: this.position()
 
 
   Router.map ->
