@@ -4,7 +4,14 @@
   </head>
 
   <body>
+    {{ loginButtons }}
     {{> hello}}
+
+    {{#if currentUser}}
+      {{ createRoomControls }}
+      {{ roomsList }}
+      {{> room }}
+    {{/if}}
   </body>
 </template>
 
@@ -22,4 +29,10 @@
 
 <template name="showBoard">
 	<div id="board1" style="width: 400px"></div>
+</template>
+
+<template name="room">
+  {{#if inRoom}}
+    {{> singleRoom }}
+  {{/if}}
 </template>
